@@ -27,7 +27,9 @@
 .App-link {
   color: #61dafb;
 }
-
+.heading-lucas{
+  animation: App-logo-color 3s infinite alternate;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +37,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+@keyframes App-logo-color{
+  from {color:#61dafb;}
+  to {color:whitesmoke;}
 }
