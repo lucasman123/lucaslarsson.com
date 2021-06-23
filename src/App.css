@@ -24,6 +24,13 @@
   color: white;
 }
 
+.nas-container{
+  justify-content: flex-start;
+  align-self: flex-start;
+  font-size: calc(10px + 1vmin);
+  margin-left:3vw;
+}
+
 .App-link {
   color: #61dafb;
 }
