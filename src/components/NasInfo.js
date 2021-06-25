@@ -5,12 +5,12 @@ class NasInfo extends React.Component
         super(props);
         this.state = {
             isFetching:false,
+            fetchIntervalId:-1,
             nasInfo: null
         };
     }
     
     fetchNasInfo(){
-        console.log("Fetching info");
         this.setState({...this.state, isFetching: true});
         fetch("api/nas/storage/",{mode:'no-cors',method:'GET'})
         .then(response=>response.json())
@@ -20,10 +20,21 @@ class NasInfo extends React.Component
     }
     componentDidMount(){
         this.fetchNasInfo();
+        const intervalId = setInterval(
+            ()=>{
+                this.fetchNasInfo();
+            }
+        ,5000);
+        this.setState({...this.state, fetchIntervalId: intervalId});
     }
+    componentWillUnmount(){
+        if(this.state.fetchIntervalId!=-1)
+            clearInterval(this.state.fetchIntervalId);
+    }
+
     RenderDisks = () => {
+        
         let vdev = this.state.nasInfo.topology.data[0];
-        console.log(vdev);
         let disks = vdev.children.map(disk => {
             return(
                 <div>
@@ -31,7 +42,7 @@ class NasInfo extends React.Component
                 </div>
             ) 
         });
-        console.log(disks);
+
         return (
         <div className = "disk-container">
             {vdev.type}
@@ -43,7 +54,6 @@ class NasInfo extends React.Component
     }
     render(){
         if(this.state.nasInfo!=null){
-            console.log(this.state.nasInfo);
             return (
                 <div className="nas-container">
                     <p>Status: <span className={this.statusToColor(this.state.nasInfo.status)}>{this.state.nasInfo.status}</span></p>
