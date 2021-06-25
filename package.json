@@ -17,7 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://api.lucaslarsson.com",
+  "proxy": "https://api.lucaslarsson.com",
   "eslintConfig": {
     "extends": [
       "react-app",

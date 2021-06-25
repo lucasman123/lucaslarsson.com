@@ -12,8 +12,11 @@ class NasInfo extends React.Component
     
     fetchNasInfo(){
         this.setState({...this.state, isFetching: true});
-        fetch("api/nas/storage/",{mode:'no-cors',method:'GET'})
-        .then(response=>response.json())
+        fetch("https://api.lucaslarsson.com/api/nas/storage",{mode:'cors',method:'GET'})
+        .then(response=>{ if(!response.ok){
+            throw new Error('Network response was not ok');
+        } return response.json()})
+        .catch(error=>console.log(error))
         .then(data=>{
             this.setState({nasInfo:data,isFetching:false})
         });
