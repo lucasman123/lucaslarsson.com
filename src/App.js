@@ -1,9 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-
+import NasInfo from './components/NasInfo';
 function App() {
-  let x = {name:"default"};
-  fetch("api/nas/storage/",{mode:'no-cors',method:'GET'}).then(response=>response.json()).then(data=>x=data)
   return (
     <div className="App">
       <header className="App-header">
@@ -11,17 +9,14 @@ function App() {
         <p>
           Under utveckling.
         </p>
-          <a class="App-link" href="mailto:lucas.e.larsson@telia.com"> 
+          <a className="App-link" href="mailto:lucas.e.larsson@telia.com"> 
             Kontakt
           </a>
-          <div className="nas-container">
-            <p>Status: <span>Online</span></p>
-            <p>Pool0: {x.name} <span>Online</span>. Healthy: <span>True</span></p>
-            <p>Disk space left: <span>1.5TB</span></p>
-          </div>
+         <NasInfo/>
       </header>
     </div>
   );
 }
 
 export default App;
+

@@ -37,6 +37,13 @@
 .heading-lucas{
   animation: App-logo-color 3s infinite alternate;
 }
+
+.online{
+  color:green;
+}
+.offline{
+  color:red;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
