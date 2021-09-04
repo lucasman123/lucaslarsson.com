@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import NasInfo from './components/NasInfo';
+import WotInfo from './components/WotInfo';
+import EsportalInfo from './components/EsportalInfo';
+
 function App() {
   return (
     <div className="App">
@@ -14,8 +17,8 @@ function App() {
           </a>
         <div className="card-container">
           <NasInfo/>
-          <NasInfo/>
-          <NasInfo/>
+          <WotInfo/>
+          <EsportalInfo/>
         </div>
       </header>
     </div>
