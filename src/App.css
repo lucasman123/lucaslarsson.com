@@ -24,12 +24,15 @@
   color: white;
 }
 
-.nas-container{
+.card{
   justify-content: flex-start;
   align-self: flex-start;
   font-size: calc(10px + 1vmin);
   margin-left:3vw;
   margin-top: auto;
+  background-color: #282d38;
+  border-radius: 1rem;
+  padding: 1rem ;
 }
 
 .App-link {
@@ -44,6 +47,13 @@
 }
 .offline{
   color:red;
+}
+
+.card-container
+{
+  margin-top: auto;
+  display: flex;
+  align-self: center;
 }
 @keyframes App-logo-spin {
   from {

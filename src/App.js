@@ -12,7 +12,11 @@ function App() {
           <a className="App-link" href="mailto:lucas.e.larsson@telia.com"> 
             Kontakt
           </a>
-         <NasInfo/>
+        <div className="card-container">
+          <NasInfo/>
+          <NasInfo/>
+          <NasInfo/>
+        </div>
       </header>
     </div>
   );

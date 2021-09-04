@@ -12,7 +12,7 @@ class NasInfo extends React.Component
     
     fetchNasInfo(){
         this.setState({...this.state, isFetching: true});
-        fetch("https://api.lucaslarsson.com/api/nas/storage",{mode:'cors',method:'GET'})
+        fetch("/api/nas/storage",{mode:'cors',method:'GET'})
         .then(response=>{ if(!response.ok){
             throw new Error('Network response was not ok');
         } return response.json()})
@@ -52,13 +52,15 @@ class NasInfo extends React.Component
             {disks}
         </div>);
     }
+
     statusToColor(status){
         return status=="ONLINE" || status==true ? "online":"offline";
     }
+
     render(){
         if(this.state.nasInfo!=null){
             return (
-                <div className="nas-container">
+                <div className="card">
                     <p>Status: <span className={this.statusToColor(this.state.nasInfo.status)}>{this.state.nasInfo.status}</span></p>
                     <p>{this.state.nasInfo.name} <span className={this.statusToColor(this.state.nasInfo.status)}>{this.state.nasInfo.status}</span>. Healthy: <span className={this.statusToColor(this.state.nasInfo.healthy)} >{this.state.nasInfo.healthy ? "True":"False"}</span></p>
                     
