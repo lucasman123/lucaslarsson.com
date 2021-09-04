@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 class NasInfo extends React.Component
 {
     constructor(props){
@@ -12,10 +13,10 @@ class NasInfo extends React.Component
     
     fetchNasInfo(){
         this.setState({...this.state, isFetching: true});
-        fetch("/api/nas/storage",{mode:'cors',method:'GET'})
-        .then(response=>{ if(!response.ok){
-            throw new Error('Network response was not ok');
-        } return response.json()})
+        axios("/api/nas/storage")
+        .then(response=>{ 
+        return response.data;
+        })
         .catch(error=>console.log(error))
         .then(data=>{
             this.setState({nasInfo:data,isFetching:false})
