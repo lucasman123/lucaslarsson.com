@@ -62,6 +62,7 @@ class NasInfo extends React.Component
         if(this.state.nasInfo!=null){
             return (
                 <div className="card">
+                    <h2>NAS STATUS</h2>
                     <p>Status: <span className={this.statusToColor(this.state.nasInfo.status)}>{this.state.nasInfo.status}</span></p>
                     <p>{this.state.nasInfo.name} <span className={this.statusToColor(this.state.nasInfo.status)}>{this.state.nasInfo.status}</span>. Healthy: <span className={this.statusToColor(this.state.nasInfo.healthy)} >{this.state.nasInfo.healthy ? "True":"False"}</span></p>
                     
