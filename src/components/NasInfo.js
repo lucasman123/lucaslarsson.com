@@ -32,7 +32,7 @@ class NasInfo extends React.Component
         this.setState({...this.state, fetchIntervalId: intervalId});
     }
     componentWillUnmount(){
-        if(this.state.fetchIntervalId!=-1)
+        if(this.state.fetchIntervalId!==-1)
             clearInterval(this.state.fetchIntervalId);
     }
 
@@ -55,7 +55,7 @@ class NasInfo extends React.Component
     }
 
     statusToColor(status){
-        return status=="ONLINE" || status==true ? "online":"offline";
+        return status==="ONLINE" || status===true ? "online":"offline";
     }
 
     render(){

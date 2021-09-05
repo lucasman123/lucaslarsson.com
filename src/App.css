@@ -34,6 +34,19 @@
   border-radius: 1rem;
   padding: 1rem ;
 }
+.nav-list
+{
+  list-style-type: none;
+  padding: 1rem;
+  align-items: stretch;
+}
+.nav-list li
+{
+  width: 100%;
+  padding: 0.5rem;
+  background-color: black;
+  margin-bottom: 0.5rem;
+}
 
 .App-link {
   color: #61dafb;

@@ -23,16 +23,17 @@ class WotInfo extends React.Component
     {
         this.setState({...this.state, fetched:true,username:"zLucasman",wn8:1100,winrate:50.5});
     }
-    wn8Comp(props){
-        return <h1>props.wn8</h1>
+    Wn8Comp(props){
+        return <h3>{props.children}</h3>
     }
     render(){
         return (
             <div className="card">
+                
                 <h2>Word of tanks</h2>
                 <p>{this.state.username}</p>
-                <p>WN8: {this.state.wn8}</p>
-                <p>Recent WN8: {this.state.recentWn8}%</p>
+                <p>WN8 <this.Wn8Comp>{this.state.wn8}</this.Wn8Comp></p>
+                <p>Recent WN8 <this.Wn8Comp>{this.state.recentWn8}</this.Wn8Comp></p>
                 <p>Winrate: {this.state.winrate}%</p>
              </div>
             )
