@@ -1,5 +1,6 @@
 import NasInfo from '../components/NasInfo';
 import NavCard from '../components/NavCard';
+import SunInfo from '../components/SunInfo';
 function Home()
 {
     return (<header className="App-header">
@@ -12,8 +13,8 @@ function Home()
           </a>
           
         <div className="card-container">
-          <NasInfo/>
           <NavCard/>
+          <SunInfo/>
         </div>
       </header>);
 }
